@@ -10,10 +10,3 @@ def predict_image(image_uplo, model):
     predict_array = model.predict(im_input)[0]
 
     predict_label = np.argmax(model.predict(im_input))
-
-    if predict_label == 0:
-        print('covid')
-    elif predict_label == 1:
-        print('normal')
-    elif predict_label == 2:
-        print('penumonia')
