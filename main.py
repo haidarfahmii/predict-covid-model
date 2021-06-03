@@ -1,7 +1,8 @@
 from flask import Flask, request
 from models.Preprocess import predict_image
 import cv2, numpy as np
-import tensorlow as tf
+import tensorflow as tf 
+from keras.models import load_model
 # from models.Preprocess import RequestToImage
 
 app = Flask(__name__)
