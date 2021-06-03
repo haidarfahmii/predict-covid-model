@@ -1,6 +1,8 @@
 from flask import Flask, request
 from models.Preprocess import predict_image
 import cv2, numpy as np
+import tensorflow as tf 
+from keras.models import load_model
 # from models.Preprocess import RequestToImage
 
 app = Flask(__name__)
@@ -9,17 +11,15 @@ app = Flask(__name__)
 def welcome():
     return "Hello Flask!"
 
+model = load_model('model_ml_vg_1.h5')
+
 @app.route('/predict', methods=['POST'])
 def predict():
     # ini logic buat ambil gambar udah ini tugas gua
     file = request.files['image'].read()
     npimg = np.fromstring(file, np.uint8)
     img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
-
-    model = tf.load('model.tflite') #ini logic yg dikasih temen gua untuk load model cmn masih belom bener kalian harus
-                                    #cari syntax benernya
-
-    return predict_image(img, model)
+    return predict_image(img,model)
 
 if __name__ == "__main__":
     # app.run()
