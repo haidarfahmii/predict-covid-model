@@ -1,4 +1,5 @@
 from flask import Flask, request
+from keras.preprocessing import image
 from models.Preprocess import predict_image
 import cv2, numpy as np
 import tensorflow as tf 
@@ -6,6 +7,9 @@ from keras.models import load_model
 # from models.Preprocess import RequestToImage
 
 app = Flask(__name__)
+
+
+dict = { 0 : 'Covid', 1 : 'Normal, 2 : 'Pneumonia'}
 
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
@@ -18,8 +22,8 @@ def predict():
     # ini logic buat ambil gambar udah ini tugas gua
     file = request.files['image'].read()
     npimg = np.fromstring(file, np.uint8)
-    img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
-    return predict_image(img,model)
+    img2 = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
+    return predict_image(img2)
 
 if __name__ == "__main__":
     # app.run()
