@@ -7,6 +7,9 @@ from keras.models import load_model
 
 app = Flask(__name__)
 
+
+dict = { 0 : 'Covid', 1 : 'Normal, 2 : 'Pneumonia'}
+
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
     return "Hello Flask!"
