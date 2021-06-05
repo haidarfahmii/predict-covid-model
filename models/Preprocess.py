@@ -10,3 +10,4 @@ def predict_image(image_uplo, model):
     predict_array = model.predict(im_input)[0]
 
     predict_label = np.argmax(model.predict(im_input))
+    return predict_label
