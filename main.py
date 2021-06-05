@@ -22,7 +22,7 @@ def predict():
     file = request.files['image'].read()
     npimg = np.fromstring(file, np.uint8)
     img2 = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
-    return predict_image(img)
+    return predict_image(img2)
 
 if __name__ == "__main__":
     # app.run()
