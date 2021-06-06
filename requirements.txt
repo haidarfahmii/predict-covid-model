@@ -3,3 +3,4 @@ gunicorn
 tensorflow
 opencv-python
 numpy
+libgl1-mesa-glx
