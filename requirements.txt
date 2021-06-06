@@ -1,5 +1,5 @@
-Flask==2.0.1 gunicorn
-opencv-python==4.5.2.52 gunicorn
-numpy==1.19.5 gunicorn
-tensorflow==2.5.0 gunicorn
-tensorflow-estimator==2.5.0 gunicorn
+Flask==2.0.1
+opencv-python==4.5.2.52
+numpy==1.19.5
+tensorflow==2.5.0
+tensorflow-estimator==2.5.0
