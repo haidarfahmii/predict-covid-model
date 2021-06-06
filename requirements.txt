@@ -3,4 +3,3 @@ gunicorn
 tensorflow
 numpy
 opencv-python
-libglib2.0-0
