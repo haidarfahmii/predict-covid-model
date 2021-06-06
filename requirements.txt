@@ -1,5 +1,5 @@
 Flask
 gunicorn
 tensorflow
-opencv-python
-numpy
+numpy==1.19.0
+opencv-python==4.1.0.25
