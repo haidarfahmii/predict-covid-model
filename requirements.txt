@@ -1,4 +1,4 @@
-torch==1.5.1+cpu
-torchvision==0.6.1+cpu
-transformers
 flask
+opencv-python==4.5.2.52
+tensorflow==2.5.0
+tensorflow-estimator==2.5.0
