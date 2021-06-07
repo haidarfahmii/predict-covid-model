@@ -1,5 +1,6 @@
 from flask import Flask, request
-import cv2, numpy as np
+import cv2
+import numpy as np
 import tensorflow as tf
 
 app = Flask(__name__)
