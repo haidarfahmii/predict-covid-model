@@ -2,6 +2,7 @@ from flask import Flask, request
 import cv2
 import numpy as np
 import tensorflow as tf
+from tensorflow.keras.preprocessing.image import img_to_array
 
 app = Flask(__name__)
 
@@ -31,9 +32,8 @@ def predict():
     file = request.files['image'].read()
     npimg = np.fromstring(file, np.uint8)
     img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
-    img = cv2.resize(img, (224, 224),fx=0,fy=0, interpolation = cv2.INTER_CUBIC)
-
-    x = tf.keras.preprocessing.image.img_to_array(img)
+    img = tf.image.resize(img, (224, 224))
+    x = img_to_array(img)
     x = np.expand_dims(x, axis=0)
     img = np.vstack([x])
 
