@@ -31,7 +31,7 @@ def predict():
     file = request.files['image'].read()
     npimg = np.fromstring(file, np.uint8)
     img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
-    img = cv2.resize(img, (224, 224))
+    img = cv2.resize(img, (224, 224),fx=0,fy=0, interpolation = cv2.INTER_CUBIC)
 
     x = tf.keras.preprocessing.image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
