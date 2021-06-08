@@ -11,7 +11,7 @@
 - Choose Boost Disk `debian-10-tf-2-4-1-v20210412`
 - Create firewall with network tag same with compute engine
 
-### 3. Cloud Engine Run Server for Model]
+### 3. Cloud Engine Run Server for Model
 - Run SSH on already created VM
 - Clone git repository `https://github.com/haidarfahmii/predict-covid-model.git`
 - Go to the predict-covid-model directory : `cd predict-covid-model`
