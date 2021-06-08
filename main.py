@@ -32,14 +32,15 @@ def predict():
     file = request.files['image'].read()
     npimg = np.fromstring(file, np.uint8)
     img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
-    img = tf.image.resize(img, (224, 224))
+
+    img = cv2.resize(img, (224, 224))
     x = img_to_array(img)
     x = np.expand_dims(x, axis=0)
     img = np.vstack([x])
 
+    print(predict_image(img, model))
     return predict_image(img, model)
 
 if __name__ == "__main__":
     # app.run()
     app.run(debug=True, host='0.0.0.0', port='5000')
-
