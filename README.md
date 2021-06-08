@@ -1,4 +1,4 @@
-# Machine Learning API on Cloud Build
+# Machine Learning API on Cloud Compute Engine
 ### 1. Write the Flask server app using Python
 
 - Save the model in `'.h5'` format in the same directory as `main.py`
